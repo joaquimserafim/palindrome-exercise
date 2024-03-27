@@ -5,8 +5,11 @@
 export const isPalindrome = (str: string) => {
 	const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-	for (let i = 0; i < cleanStr.length / 2; i++) {
-		if (cleanStr[i] !== cleanStr[cleanStr.length - 1 - i]) {
+	const len = cleanStr.length;
+	const middle = len / 2;
+
+	for (let i = 0; i < middle; i++) {
+		if (cleanStr[i] !== cleanStr[len - 1 - i]) {
 			return false;
 		}
 	}
